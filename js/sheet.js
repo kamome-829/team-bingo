@@ -39,6 +39,31 @@ $(() => {
                 }
             };
 
+            //ローカルストレージへ番号保存
+            const number_save = () => {
+                const bingo_number = [];
+                let row = make_table();
+                for (let i = 0; i < row.length; i++) {
+                    const number = $('#bi' + i).text();
+                    bingo_number.push(number);
+                }
+                console.log(bingo_number);
+                const jsonBingo_number = JSON.stringify(bingo_number);
+                localStorage.setItem('bingo_number', jsonBingo_number);
+                console.log(jsonBingo_number);
+            };
+            
+            //リロード判定行い、リロード時にローカルストレージへ保存した番号再表示
+            const arter_reload = () => {
+                if (performance.navigation.type === 1) {
+                    let jsonBingo_number = localStorage.getItem('bingo_number');
+                    let reloadBingp_number = JSON.parse(jsonBingo_number);
+                    console.log(reloadBingp_number);
+                    for (let i = 0; i < reloadBingp_number.length; i++) {
+                        $('#bi' + i).text(reloadBingp_number[i]);
+                    };
+                };
+            }
             // 初期化関数
             const init = () => {
                 create_card();
@@ -52,6 +77,11 @@ $(() => {
             // 初期
             init();
             
+            //freeタップ時イベント
+            $('#bi12').click(() => { 
+                number_save();
+            });
+
             // カード作成 ボタンをクリックすると、初期化
             $('#bingo-create').click(() => {
                 init();
@@ -61,4 +91,13 @@ $(() => {
             $('#bingo td').click(function() {
                 $(this).toggleClass('check');
             });
+            
+            //リロード時注意警告
+            $(window).on('beforeunload', function(){
+                const message = 'リロードしないでください';
+                return message;
+            });
+            
+            //リロード後
+            arter_reload();
         });
