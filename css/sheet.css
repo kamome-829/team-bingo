@@ -5,6 +5,12 @@ body {
   height: 100vh;
 }
 
+#result {
+  text-align: center;
+  font-size: 100px;
+}
+
+
 #bingo {
       width: 500px;
       margin: 0 auto;

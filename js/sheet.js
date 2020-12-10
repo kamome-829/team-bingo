@@ -58,7 +58,45 @@ $(() => {
             });
             
             // 番号をクリックすると、スタイルを変更するクラスをつけ外しできる
-            $('#bingo td').click(function() {
-                $(this).toggleClass('check');
-            });
+            $('#bingo td').click(function () {
+        $(this).toggleClass('check');
+        if ($("#bi0").hasClass('check')&&$("#bi1").hasClass('check')&&$("#bi2").hasClass('check')&&$("#bi3").hasClass('check')&&$("#bi4").hasClass('check')) {
+            $("#result").html("BINGO");
+            return;
+        } else if ($("#bi5").hasClass('check')&&$("#bi6").hasClass('check')&&$("#bi7").hasClass('check')&&$("#bi8").hasClass('check')&&$("#bi9").hasClass('check')) {
+            $("#result").html("BINGO");
+            return;
+        } else if ($("#bi10").hasClass('check')&&$("#bi11").hasClass('check')&&$("#bi12").hasClass('check')&&$("#bi13").hasClass('check')&&$("#bi14").hasClass('check')) {
+            $("#result").html("BINGO");
+            return;
+        } else if ($("#bi15").hasClass('check')&&$("#bi16").hasClass('check')&&$("#bi17").hasClass('check')&&$("#bi18").hasClass('check')&&$("#bi19").hasClass('check')) {
+            $("#result").html("BINGO");
+            return;
+        } else if ($("#bi20").hasClass('check')&&$("#bi21").hasClass('check')&&$("#bi22").hasClass('check')&&$("#bi23").hasClass('check')&&$("#bi24").hasClass('check')) {
+            $("#result").html("BINGO");
+            return;
+        } else if ($("#bi0").hasClass('check')&&$("#bi6").hasClass('check')&&$("#bi12").hasClass('check')&&$("#bi18").hasClass('check')&&$("#bi24").hasClass('check')) {
+            $("#result").html("BINGO");
+            return;
+        } else if ($("#bi4").hasClass('check')&&$("#bi8").hasClass('check')&&$("#bi12").hasClass('check')&&$("#bi16").hasClass('check')&&$("#bi20").hasClass('check')) {
+            $("#result").html("BINGO");
+            return;
+        } else if ($("#bi0").hasClass('check')&&$("#bi5").hasClass('check')&&$("#bi10").hasClass('check')&&$("#bi15").hasClass('check')&&$("#bi20").hasClass('check')) {
+            $("#result").html("BINGO");
+            return;
+        } else if ($("#bi1").hasClass('check')&&$("#bi6").hasClass('check')&&$("#bi11").hasClass('check')&&$("#bi16").hasClass('check')&&$("#bi21").hasClass('check')) {
+            $("#result").html("BINGO");
+            return;
+        } else if ($("#bi2").hasClass('check')&&$("#bi7").hasClass('check')&&$("#bi12").hasClass('check')&&$("#bi17").hasClass('check')&&$("#bi22").hasClass('check')) {
+            $("#result").html("BINGO");
+            return;
+        } else if ($("#bi3").hasClass('check')&&$("#bi8").hasClass('check')&&$("#bi13").hasClass('check')&&$("#bi18").hasClass('check')&&$("#bi23").hasClass('check')) {
+            $("#result").html("BINGO");
+            return;
+        } else if ($("#bi4").hasClass('check')&&$("#bi9").hasClass('check')&&$("#bi14").hasClass('check')&&$("#bi19").hasClass('check')&&$("#bi24").hasClass('check')) {
+            $("#result").html("BINGO");
+            return;
+        }
+    });
+
         });
