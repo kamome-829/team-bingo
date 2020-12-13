@@ -6,7 +6,6 @@ $(() => {
     bingo = [],
     status = true,
     roulette,
-    sound,
     random,
     number,
     result,
